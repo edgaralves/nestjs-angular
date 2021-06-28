@@ -1,0 +1,88 @@
+version: '3'
+
+services:
+  api-gateway:
+    image: api-gateway:dev
+    container_name: api-gateway
+    build:
+      context: ./api-gateway
+      dockerfile: DockerFile
+      target: development
+    volumes:
+      - ./api-gateway:/usr/local/api-gateway
+    networks:
+      - backend
+      - frontend
+    ports:
+      - 3000:3000
+    depends_on:
+      - users-service
+    environment:
+      NODE_ENV: dev
+      PORT: 3000
+      USERS_SERVICE_URL: users-service
+      USERS_SERVICE_PORT: 8877
+    restart: on-failure
+
+  webapp:
+    image: webapp:dev
+    container_name: webapp
+    build:
+      context: ./webapp
+      dockerfile: DockerFile
+      target: development
+    volumes:
+      - ./webapp:/usr/local/webapp
+    networks:
+      - frontend
+    ports:
+      - 4200:4200
+    depends_on:
+      - api-gateway
+    environment:
+      NODE_ENV: dev
+    restart: on-failure
+
+  users-service:
+    image: users-service:dev
+    container_name: users-service
+    build:
+      context: ./services/users-service
+      dockerfile: DockerFile
+      target: development
+    volumes:
+      - ./services/users-service:/usr/local/users-service
+    networks:
+      - backend
+      - usersdomain
+    depends_on:
+      - mongodb
+    expose:
+      - 8877
+    environment:
+      NODE_ENV: dev
+      URL: 0.0.0.0
+      PORT: 8877
+      MONGODB_CONNECTION_STRING: mongodb://mongodb:27017
+      MONGODB_DATABASE: users
+    restart: on-failure
+
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    networks:
+      - usersdomain
+    volumes:
+      - mongodata:/data/db
+    restart: always
+    expose:
+      - 27017
+    command: mongod --quiet --logpath /dev/null
+
+networks:
+  frontend:
+  backend:
+  usersdomain:
+
+volumes:
+  mongodata: {}

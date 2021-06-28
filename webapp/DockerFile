@@ -1,0 +1,17 @@
+FROM node:14-alpine as development
+
+WORKDIR /usr/local/webapp
+
+COPY package*.json tsconfig*.json ./
+
+RUN npm install
+
+COPY . ./
+
+CMD ["npm", "run", "start"]
+
+FROM nginx:14-alpine as production
+
+COPY --from=development /usr/local/webapp/dist/webapp /usr/share/nginx/html
+
+EXPOSE 80

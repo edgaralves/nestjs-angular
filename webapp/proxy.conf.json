@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "http://api-gateway:3000",
+    "secure": false,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "changeOrigin": true
+  }
+}
