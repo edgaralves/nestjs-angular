@@ -8,7 +8,8 @@
     "docker:start": "docker-compose start",
     "docker:stop": "docker-compose stop",
     "docker:rebuild": "docker-compose build --no-cache --pull ",
-    "bootstrap": "npm run install && npm run docker:build && npm run start",
+    "docker:up": "docker-compose up ",
+    "bootstrap": "npm run install && npm run docker:build && npm run docker:up",
     "start": "npm run docker:start"
   },
   "author": "Edgar Alves",
