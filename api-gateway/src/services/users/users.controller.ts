@@ -1,10 +1,12 @@
 import {
   Body,
   Controller,
+  Delete,
   Get,
   Header,
   Inject,
   Logger,
+  Param,
   Post,
 } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
@@ -31,5 +33,13 @@ export class UsersController {
     this.logger.log('Users#add.call');
 
     return this.client.send('add', user);
+  }
+
+  @Delete(':id')
+  @Header('Content-Type', 'application/json')
+  remove(@Param('id') userId: string): Observable<any> {
+    this.logger.log('Users#remove.call');
+
+    return this.client.send('remove', userId);
   }
 }

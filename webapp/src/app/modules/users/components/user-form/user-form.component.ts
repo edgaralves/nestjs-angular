@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { take } from 'rxjs/operators';
+import { Store } from '@ngrx/store';
 import { User } from '../../interfaces/users.interface';
-import { UsersService } from '../../store/users.service';
+import { addUser } from '../../store/users.actions';
+import { UsersState } from '../../store/users.reducers';
 
 @Component({
   selector: 'app-user-form',
@@ -11,7 +12,7 @@ import { UsersService } from '../../store/users.service';
 export class UserFormComponent {
   public userForm: FormGroup;
 
-  constructor(private readonly userService: UsersService) {
+  constructor(private readonly store: Store<UsersState>) {
     this.userForm = new FormGroup({
       name: new FormControl('', Validators.required),
       profession: new FormControl('', Validators.required),
@@ -24,10 +25,7 @@ export class UserFormComponent {
         name: this.userForm.get('name')?.value,
         profession: this.userForm.get('profession')?.value,
       };
-      this.userService
-        .add(user, { isOptimistic: false })
-        .pipe(take(1))
-        .subscribe(() => this.userService.getAll());
+      this.store.dispatch(addUser({ user }));
     }
   }
 }
