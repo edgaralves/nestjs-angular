@@ -1,7 +1,7 @@
 export interface User {
   id: string;
   name: string;
-  photoUrl: string;
+  profession: string;
   createdAt: string;
   updatedAt: string;
 }

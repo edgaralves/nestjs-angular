@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  title = 'NTT Data - Web app';
+  title = 'NTTData - Web app';
 }

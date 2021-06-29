@@ -1,1 +1,64 @@
-<p>user works!</p>
+<div
+  class="
+    card
+    border
+    w-96
+    hover:shadow-none
+    relative
+    flex flex-col
+    rounded-xl
+    mx-auto
+    shadow-lg
+    m-5
+  "
+>
+  <img
+    class="max-h-20 w-full opacity-80 absolute top-0 rounded-t-xl"
+    style="z-index: -1"
+    [src]="'https://picsum.photos/400/100?' + user.name"
+    alt=""
+  />
+  <div class="profile w-full flex m-3 ml-4 text-white">
+    <img
+      class="w-28 h-28 p-1 bg-white rounded-full"
+      [src]="'https://i.pravatar.cc/150?' + user.name"
+      alt=""
+    />
+    <div class="title mt-11 ml-3 font-bold flex flex-col">
+      <div class="name break-words">{{ user.name }}</div>
+      <div class="add font-semibold text-sm italic text-gray-400">
+        {{ user.profession }}
+      </div>
+    </div>
+  </div>
+  <div
+    class="
+      buttons
+      flex
+      absolute
+      bottom-0
+      font-bold
+      right-0
+      text-xs text-white
+      space-x-0
+      my-3.5
+      mr-3
+    "
+  >
+    <div
+      class="
+        add
+        border
+        rounded-2xl
+        border-gray-300
+        bg-red-700
+        p-1
+        px-4
+        cursor-pointer
+        hover:bg-red-400 hover:text-gray-300
+      "
+    >
+      Remove
+    </div>
+  </div>
+</div>
