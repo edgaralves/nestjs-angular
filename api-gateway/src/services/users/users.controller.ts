@@ -10,6 +10,7 @@ import {
   Post,
 } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
+import { ApiBody } from '@nestjs/swagger';
 import { Observable } from 'rxjs';
 import { User } from '../../commons/interfaces/users.interface';
 
@@ -28,18 +29,19 @@ export class UsersController {
   }
 
   @Post()
+  @ApiBody({ type: User })
   @Header('Content-Type', 'application/json')
-  add(@Body() user: Partial<User>): Observable<User> {
-    this.logger.log('Users#add.call');
+  create(@Body() user: Partial<User>): Observable<User> {
+    this.logger.log('Users#create.call');
 
-    return this.client.send('add', user);
+    return this.client.send('create', user);
   }
 
   @Delete(':id')
   @Header('Content-Type', 'application/json')
-  remove(@Param('id') userId: string): Observable<any> {
-    this.logger.log('Users#remove.call');
+  delete(@Param('id') userId: string): Observable<any> {
+    this.logger.log('Users#delete.call');
 
-    return this.client.send('remove', userId);
+    return this.client.send('delete', userId);
   }
 }

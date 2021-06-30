@@ -13,13 +13,13 @@ export class AppController {
     return this.userService.all();
   }
 
-  @MessagePattern('add')
-  async add(user: Partial<User>): Promise<User> {
-    return this.userService.add(user);
+  @MessagePattern('create')
+  async create(user: Partial<User>): Promise<User> {
+    return this.userService.create(user);
   }
 
-  @MessagePattern('remove')
-  async remove(userId: string): Promise<DeleteResult> {
-    return this.userService.remove(userId);
+  @MessagePattern('delete')
+  async delete(userId: string): Promise<DeleteResult> {
+    return this.userService.delete(userId);
   }
 }

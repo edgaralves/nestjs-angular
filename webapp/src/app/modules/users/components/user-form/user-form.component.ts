@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { User } from '../../interfaces/users.interface';
-import { addUser } from '../../store/users.actions';
+import { createUser } from '../../store/users.actions';
 import { UsersState } from '../../store/users.reducers';
 
 @Component({
@@ -25,7 +25,7 @@ export class UserFormComponent {
         name: this.userForm.get('name')?.value,
         profession: this.userForm.get('profession')?.value,
       };
-      this.store.dispatch(addUser({ user }));
+      this.store.dispatch(createUser({ user }));
     }
   }
 }

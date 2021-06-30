@@ -14,11 +14,11 @@ export class UserService {
     return this.usersRepository.find();
   }
 
-  add(user: Partial<User>): Promise<User> {
+  create(user: Partial<User>): Promise<User> {
     return this.usersRepository.save(new User(user));
   }
 
-  remove(userId: string): Promise<DeleteResult> {
+  delete(userId: string): Promise<DeleteResult> {
     return this.usersRepository.delete(userId);
   }
 }
