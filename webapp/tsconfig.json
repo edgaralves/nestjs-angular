@@ -16,10 +16,23 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "es2020",
-    "lib": [
-      "es2018",
-      "dom"
-    ]
+    "lib": ["es2018", "dom"]
+  },
+  "scripts": {
+    "generate-icons": "svgGenerator"
+  },
+  "svgGenerator": {
+    "outputPath": "./src/app/svg",
+    "prefix": "app",
+    "srcPath": "./src/assets/svg",
+    "svgoConfig": {
+      "plugins": [
+        {
+          "removeDimensions": true,
+          "cleanupAttrs": true
+        }
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
