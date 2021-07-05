@@ -1,6 +1,6 @@
 # Webapp
 
-Project Blueprint with Angular and NextJS
+Project Blueprint with Angular and NestJS
 
 ## Install application
 
