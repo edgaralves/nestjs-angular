@@ -16,8 +16,7 @@
     "bootstrap": "npm-run-all docker:build docker:up docker:logs",
     "start": "npm-run-all docker:start docker:logs",
     "stop": "npm-run-all docker:stop",
-    "restart": "npm-run-all docker:stop docker:start docker:logs",
-    "__": "***************************"
+    "restart": "npm-run-all docker:stop docker:start docker:logs"
   },
   "author": "Edgar Alves",
   "license": "MIT",

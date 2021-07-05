@@ -85,11 +85,6 @@ services:
       - 27017
     command: mongod --quiet --logpath /dev/null
 
-  # redis:
-  #   image: redis
-  #   expose:
-  #       - "6379"
-
 networks:
   frontend:
   backend:
