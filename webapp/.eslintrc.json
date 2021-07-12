@@ -1,20 +1,9 @@
 {
   "root": true,
-  "ignorePatterns": [
-    "projects/**/*"
-  ],
+  "ignorePatterns": ["projects/**/*"],
   "overrides": [
     {
-      "files": [
-        "*.ts"
-      ],
-      "parserOptions": {
-        "project": [
-          "tsconfig.json",
-          "e2e/tsconfig.json"
-        ],
-        "createDefaultProgram": true
-      },
+      "files": ["*.ts"],
       "extends": [
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates"
@@ -37,20 +26,12 @@
           }
         ],
         "indent": ["error", 2],
-        "no-empty-function": ["error", { "allow": ["getters", "setters", "constructors", "asyncFunctions", "asyncMethods"] }],
-        "no-use-before-define": "off",
-        "quotes": ["error", "single", "avoid-escape"],
-        "semi": "error",
-        "arrow-body-style": ["error", "never"]
+        "quotes": ["error", "single", "avoid-escape"]
       }
     },
     {
-      "files": [
-        "*.html"
-      ],
-      "extends": [
-        "plugin:@angular-eslint/template/recommended"
-      ],
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
       "rules": {}
     }
   ]

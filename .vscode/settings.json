@@ -2,5 +2,10 @@
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
-  }
+  },
+  "eslint.workingDirectories": [
+    { "directory": "api-gateway", "changeProcessCWD": true },
+    { "directory": "services/users-service", "changeProcessCWD": true },
+    { "directory": "webapp", "changeProcessCWD": true }
+  ]
 }
