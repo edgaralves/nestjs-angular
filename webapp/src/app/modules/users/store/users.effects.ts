@@ -32,7 +32,9 @@ export class UserEffects {
   createUser$: Observable<Action> = createEffect(() =>
     this.action$.pipe(
       ofType(UserActions.createUser),
-      switchMap((action) => this.http.post<User>(`${environment.apiUrl}/users`, action.user)),
+      switchMap((action) =>
+        this.http.post<User>(`${environment.apiUrl}/users`, action.user),
+      ),
       switchMap(() => of(UserActions.getUsers())),
     ),
   );
@@ -41,9 +43,8 @@ export class UserEffects {
     this.action$.pipe(
       ofType(UserActions.deleteUser),
       switchMap((action) =>
-        this.http.delete(
-          `${environment.apiUrl}/users/${action.user.id}`,
-        )),
+        this.http.delete(`${environment.apiUrl}/users/${action.user.id}`),
+      ),
       switchMap(() => of(UserActions.getUsers())),
     ),
   );

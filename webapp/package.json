@@ -6,8 +6,10 @@
     "start": "ng serve --host 0.0.0.0 --disable-host-check",
     "build": "ng build",
     "build:prod": "NODE_ENV=production ng build --prod",
+    "prettier:check": "prettier --check \"src/**/*.ts\" \"e2e/**/*.ts\"",
+    "prettier:format": "prettier --write \"src/**/*.ts\" \"e2e/**/*.ts\"",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "ng lint && npm run prettier:check",
     "e2e": "ng e2e"
   },
   "private": true,
@@ -52,6 +54,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.5.0",
+    "prettier": "^2.3.2",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "typescript": "~4.2.4"
