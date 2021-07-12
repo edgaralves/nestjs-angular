@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "A sample REST APP with API Gateway and backend microservices.",
   "scripts": {
-    "prepare": "husky install",
     "lint:api-gateway": "npm run lint --prefix api-gateway",
     "lint:service:users-service": "npm run lint --prefix services/users-service",
     "lint:webapp": "npm run lint --prefix webapp",
