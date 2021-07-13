@@ -1,4 +1,3 @@
-import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { ClientOptions, Transport } from '@nestjs/microservices';
 import { AppModule } from './app.module';
@@ -13,6 +12,6 @@ async function bootstrap() {
   };
 
   const app = await NestFactory.createMicroservice(AppModule, options);
-  app.listen(() => Logger.log('Microservice is listening'));
+  app.listen();
 }
 bootstrap();
