@@ -3,15 +3,29 @@
   "version": "1.0.0",
   "description": "A sample REST APP with API Gateway and backend microservices.",
   "scripts": {
-    "install": "node install.js",
+    "lint:api-gateway": "npm run lint --prefix api-gateway",
+    "lint:service:users-service": "npm run lint --prefix services/users-service",
+    "lint:webapp": "npm run lint --prefix webapp",
+    "lint": "npm-run-all lint:*",
     "docker:build": "docker-compose build",
     "docker:start": "docker-compose start",
     "docker:stop": "docker-compose stop",
     "docker:rebuild": "docker-compose build --no-cache --pull ",
-    "docker:up": "docker-compose up ",
-    "bootstrap": "npm run install && npm run docker:build && npm run docker:up",
-    "start": "npm run docker:start"
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs --tail=0 --follow",
+    "_": "***************************",
+    "_1": "HOW TO RUN THE PROJECT",
+    ".": "***************************",
+    "bootstrap": "npm-run-all docker:build docker:up docker:logs",
+    "start": "npm-run-all docker:start docker:logs",
+    "stop": "npm-run-all docker:stop",
+    "restart": "npm-run-all docker:stop docker:start docker:logs"
   },
   "author": "Edgar Alves",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "^7.0.1",
+    "npm-run-all": "^4.1.5"
+  }
 }

@@ -39,7 +39,7 @@ export class UsersController {
 
   @Delete(':id')
   @Header('Content-Type', 'application/json')
-  delete(@Param('id') userId: string): Observable<any> {
+  delete(@Param('id') userId: string): Observable<boolean> {
     this.logger.log('Users#delete.call');
 
     return this.client.send('delete', userId);
