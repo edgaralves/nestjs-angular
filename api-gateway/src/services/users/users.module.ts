@@ -12,7 +12,7 @@ import { UsersController } from './users.controller';
         return ClientProxyFactory.create({
           transport: Transport.TCP,
           options: {
-            host: configService.get('USERS_SERVICE_URL'),
+            host: configService.get<string>('USERS_SERVICE_URL'),
             port: Number(configService.get('USERS_SERVICE_PORT')),
           },
         });

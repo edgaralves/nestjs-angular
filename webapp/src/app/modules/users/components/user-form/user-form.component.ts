@@ -22,8 +22,8 @@ export class UserFormComponent {
   public addUser(): void {
     if (!this.userForm.invalid) {
       const user: Partial<User> = {
-        name: this.userForm.get('name')?.value,
-        profession: this.userForm.get('profession')?.value,
+        name: this.userForm.get('name')?.value as string,
+        profession: this.userForm.get('profession')?.value as string,
       };
       this.store.dispatch(createUser({ user }));
     }
