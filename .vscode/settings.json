@@ -7,5 +7,6 @@
     { "directory": "api-gateway", "changeProcessCWD": true },
     { "directory": "services/users-service", "changeProcessCWD": true },
     { "directory": "webapp", "changeProcessCWD": true }
-  ]
+  ],
+  "headwind.runOnSave": false
 }

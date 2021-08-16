@@ -6,6 +6,7 @@
     "eamodio.gitlens",
     "christian-kohler.npm-intellisense",
     "ms-azuretools.vscode-docker",
-    "bradlc.vscode-tailwindcss"
+    "bradlc.vscode-tailwindcss",
+    "heybourn.headwind"
   ]
 }

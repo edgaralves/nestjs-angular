@@ -1,12 +1,23 @@
 <form [formGroup]="userForm">
-  <div class="mx-auto py-12 divide-y w-96">
+  <div class="py-12 mx-auto divide-y w-96">
     <div class="grid grid-cols-1 gap-6">
       <label class="block">
         <span class="text-gray-700">Full name</span>
         <input
           type="text"
           formControlName="name"
-          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+          class="
+            block
+            w-full
+            mt-1
+            border-gray-300
+            rounded-md
+            shadow-sm
+            focus:border-indigo-300
+            focus:ring
+            focus:ring-indigo-200
+            focus:ring-opacity-50
+          "
           placeholder="Full Name"
         />
       </label>
@@ -14,7 +25,18 @@
         <span class="text-gray-700">Profession</span>
         <select
           formControlName="profession"
-          class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+          class="
+            block
+            w-full
+            mt-1
+            border-gray-300
+            rounded-md
+            shadow-sm
+            focus:border-indigo-300
+            focus:ring
+            focus:ring-indigo-200
+            focus:ring-opacity-50
+          "
         >
           <option>Frontend Developer</option>
           <option>Backend Developer</option>
@@ -24,14 +46,21 @@
       </label>
       <button
         (click)="addUser()"
-        class="border-2 border-transparent bg-blue-500 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-blue-500 hover:bg-transparent hover:text-blue-500"
+        class="
+          px-4
+          py-2
+          font-bold
+          text-white
+          uppercase
+          transition-all
+          bg-blue-500
+          border-2 border-transparent
+          rounded
+          hover:border-blue-500 hover:bg-transparent hover:text-blue-500
+        "
       >
         Add User
       </button>
     </div>
   </div>
 </form>
-<svg-icon key="chevron" color="hotpink"></svg-icon>
-<svg-icon key="football" size="lg"></svg-icon>
-<svg-icon key="funnel" fontSize="100px"></svg-icon>
-<svg-icon key="game"></svg-icon>
