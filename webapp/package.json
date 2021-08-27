@@ -9,7 +9,9 @@
     "prettier:check": "prettier --check \"src/**/*.ts\" \"e2e/**/*.ts\"",
     "prettier:format": "prettier --write \"src/**/*.ts\" \"e2e/**/*.ts\"",
     "test": "ng test",
-    "lint": "ng lint && npm run prettier:check",
+    "lint": "npm run lint:code && npm run lint:style",
+    "lint:code": "ng lint && npm run prettier:check",
+    "lint:style": "stylelint \"src/**/*.scss\"",
     "e2e": "ng e2e",
     "generate-icons": "svg-generator && eslint --fix \"src/app/svg/**/*.ts\""
   },
@@ -59,6 +61,9 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "prettier": "^2.3.2",
     "protractor": "~7.0.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-scss": "^3.20.1",
     "ts-node": "~10.2.0",
     "typescript": "~4.3.5"
   },

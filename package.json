@@ -14,6 +14,7 @@
     "docker:up": "docker-compose up -d",
     "docker:down": "docker-compose down",
     "docker:logs": "docker-compose logs --tail=0 --follow",
+    "postinstall": "husky install",
     "_": "***************************",
     "_1": "HOW TO RUN THE PROJECT",
     ".": "***************************",
@@ -25,7 +26,7 @@
   "author": "Edgar Alves",
   "license": "MIT",
   "devDependencies": {
-    "husky": "^7.0.1",
+    "husky": "^7.0.2",
     "npm-run-all": "^4.1.5"
   }
 }

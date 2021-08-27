@@ -3,10 +3,10 @@
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "sonarsource.sonarlint-vscode",
+    "stylelint.vscode-stylelint",
     "eamodio.gitlens",
     "christian-kohler.npm-intellisense",
     "ms-azuretools.vscode-docker",
-    "bradlc.vscode-tailwindcss",
-    "heybourn.headwind"
+    "bradlc.vscode-tailwindcss"
   ]
 }

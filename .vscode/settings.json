@@ -1,12 +1,16 @@
 {
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": true
+    "source.organizeImports": true,
+    "source.fixAll": true
   },
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "css.validate": false,
+  "scss.validate": false,
   "eslint.workingDirectories": [
     { "directory": "api-gateway", "changeProcessCWD": true },
     { "directory": "services/users-service", "changeProcessCWD": true },
     { "directory": "webapp", "changeProcessCWD": true }
-  ],
-  "headwind.runOnSave": false
+  ]
 }
