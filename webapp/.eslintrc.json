@@ -32,7 +32,7 @@
             "type": "attribute"
           }
         ],
-        "indent": ["error", 2],
+        "indent": "off",
         "quotes": ["error", "single", "avoid-escape"],
         "no-unbound-method": 0,
         "@typescript-eslint/unbound-method": "off"
